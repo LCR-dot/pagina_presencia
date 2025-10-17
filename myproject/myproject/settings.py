@@ -82,7 +82,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+  
     'whitenoise.middleware.WhiteNoiseMiddleware',  # <--- Importante
     # resto de middleware
     'django.middleware.security.SecurityMiddleware',
