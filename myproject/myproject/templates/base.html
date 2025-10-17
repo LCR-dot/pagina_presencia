@@ -1,0 +1,50 @@
+{% load cms_tags sekizai_tags static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% page_attribute "title" %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% render_block "css" %}
+</head>
+
+<body>
+
+    {% cms_toolbar %} {# Barra de edición para usuarios autenticados #}
+    <!-- Encabezado-->
+    <header class="bg-primary text-white text-center py-4">
+        <h1>{% placeholder "titulo_principal" %}</h1>
+    </header>
+    <!--*Menu-------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
+
+        {% placeholder "Barra_de_navegacion" %}
+    </nav>
+    <!-- ****************************************** -->
+    <main class="container">
+        <section id="contenido">
+            {% placeholder "contenido_principal" %}
+        </section>
+        <section id="contenido2">
+            {% placeholder "contenido_principal2" %}
+        </section>
+        <section id="contenido3" >
+            {% placeholder "contenido_video" %}
+        </section>
+        <section id="contenido4" >
+            {% placeholder "contenido_contactanos" %}
+        </section>
+    </main>
+
+    <footer class="bg-light text-center py-3">
+        <small>{% placeholder "pie_de_pagina" %}</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% render_block "js" %}
+</body>
+
+</html>
