@@ -28,10 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-+x1t$&=09$(@k_6ht-ms*g8z!a$pzkx**#bix%$-9!3(7#+d5$'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,6 +83,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # <--- Importante
+    # resto de middleware
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -96,6 +98,9 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"  # donde se recopilarán los archivos
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'myproject.urls'
 
