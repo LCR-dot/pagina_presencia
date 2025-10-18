@@ -36,8 +36,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    #'djangocms_simple_admin_style',
-    'djangocms-simple-admin-style',
+    'djangocms_simple_admin_style',
+    #'djangocms-simple-admin-style',
 
     'django.contrib.admin',
     'django.contrib.auth',
